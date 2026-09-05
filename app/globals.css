@@ -68,3 +68,434 @@ body {
   background: #fff;
   border-bottom: 1px solid #e0e0e0;
 }
+
+/* Menu de areas */
+
+.grade-cartoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+  padding: 24px;
+  max-width: 800px;
+}
+
+.cartao-area {
+  background: #fff;
+  border-radius: 8px;
+  padding: 24px;
+  text-align: center;
+  font-weight: 600;
+  text-decoration: none;
+  color: #1a1a1a;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cartao-area:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.cartao-area-desativado {
+  color: #999;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.etiqueta-em-breve {
+  font-size: 11px;
+  font-weight: 400;
+  background: #eee;
+  border-radius: 12px;
+  padding: 2px 8px;
+}
+
+/* Tabela admin */
+
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tabela th,
+.tabela td {
+  text-align: left;
+  padding: 8px 12px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+.tabela th {
+  background: #fafafa;
+  font-weight: 600;
+}
+
+/* Organograma */
+
+.organograma {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  gap: 0;
+}
+
+.cartao-agente {
+  min-width: 120px;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: #e0e0e0;
+  color: #666;
+}
+
+.cartao-orquestrador {
+  margin-bottom: 8px;
+}
+
+.cartao-agente-vazio {
+  background: #e8e8e8;
+  color: #999;
+}
+
+.cartao-agente-rodando {
+  background: #fff3cd;
+  color: #856404;
+  animation: pulsar 1.2s ease-in-out infinite;
+}
+
+.cartao-agente-ok {
+  background: #d4edda;
+  color: #155724;
+}
+
+.cartao-agente-erro {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+@keyframes pulsar {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.organograma-linha-agentes {
+  display: flex;
+  gap: 32px;
+  position: relative;
+  padding-top: 24px;
+}
+
+.organograma-linha-agentes::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 60px;
+  right: 60px;
+  height: 2px;
+  background: #ccc;
+}
+
+.organograma-coluna {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.organograma-conector {
+  width: 2px;
+  height: 24px;
+  background: #ccc;
+}
+
+.organograma-conector-vermelho {
+  background: #dc3545;
+}
+
+/* Fila de aprovacao */
+
+.fila-aprovacao {
+  display: flex;
+  gap: 24px;
+  padding: 24px;
+}
+
+.fila-aprovacao-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 240px;
+}
+
+.fila-aprovacao-item {
+  text-align: left;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.fila-aprovacao-item.selecionado {
+  border-color: #1a1a1a;
+  background: #f0f0f0;
+}
+
+.fila-aprovacao-detalhe {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fila-aprovacao-detalhe textarea {
+  font-family: monospace;
+  font-size: 12px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.fila-aprovacao-detalhe textarea.textarea-resposta {
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 12px;
+}
+
+.aviso-itens-nao-vendidos {
+  background: #fff8e1;
+  border: 1px solid #f0c14b;
+  border-radius: 4px;
+  padding: 10px 12px;
+  font-size: 13px;
+}
+
+.aviso-itens-nao-vendidos ul {
+  margin: 6px 0;
+  padding-left: 20px;
+}
+
+.aviso-itens-nao-vendidos p {
+  margin: 4px 0 0;
+  color: #6b5300;
+}
+
+.botao-perigo {
+  background: #c0392b;
+}
+
+.botao-perigo:hover {
+  background: #a93226;
+}
+
+/* Linha do tempo */
+
+.linha-do-tempo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.linha-do-tempo-cabecalho {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.linha-do-tempo-cabecalho.status-erro {
+  border-color: #dc3545;
+  color: #721c24;
+}
+
+.linha-do-tempo-detalhe {
+  display: flex;
+  gap: 16px;
+  padding: 8px 12px;
+  background: #fafafa;
+  border-radius: 4px;
+}
+
+.linha-do-tempo-detalhe pre {
+  font-size: 11px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Abas */
+
+.abas {
+  display: flex;
+  gap: 4px;
+  padding: 16px 24px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.aba {
+  background: none;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #666;
+  border-bottom: 2px solid transparent;
+}
+
+.aba-ativa {
+  color: #1a1a1a;
+  font-weight: 600;
+  border-bottom-color: #1a1a1a;
+}
+
+/* Kanban */
+
+.kanban {
+  display: flex;
+  gap: 16px;
+  padding: 0 24px 24px;
+  overflow-x: auto;
+}
+
+.kanban-coluna {
+  min-width: 240px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.kanban-coluna h3 {
+  font-size: 13px;
+  color: #666;
+}
+
+.kanban-cartao {
+  background: #fff;
+  border-radius: 6px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.kanban-cartao.selecionado {
+  outline: 2px solid #1a1a1a;
+}
+
+.kanban-cartao-meta {
+  color: #999;
+  font-size: 12px;
+}
+
+.kanban-cartao p {
+  margin: 0;
+  color: #444;
+}
+
+/* Painel lateral */
+
+.painel-lateral {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 380px;
+  background: #fff;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
+  padding: 16px;
+  overflow-y: auto;
+  z-index: 20;
+}
+
+.painel-lateral-cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+/* Modal */
+
+.modal-fundo {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 30;
+}
+
+/* Financeiro */
+
+.antes-depois-grade {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.antes-depois-grade pre {
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 11px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-x: auto;
+}
+
+.financeiro-listas {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.cartao-lista {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #fff;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.cartao-lista-verde {
+  border-color: #28a745;
+  background: #f1fbf3;
+}
+
+.relatorio-markdown {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 13px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-width: 720px;
+}
